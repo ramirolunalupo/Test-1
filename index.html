@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento de Rugby</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Entrenamiento de Rugby</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('calentamiento')">Entrada en calor</a></li>
+                <li><a href="#" onclick="showSection('ejercicios')">Ejercicios</a></li>
+                <li><a href="#" onclick="showSection('partido')">Partido</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="calentamiento">
+            <h2>Entrada en calor</h2>
+            <p>Entrenadores: [Nombres de los entrenadores]</p>
+            <div class="content">
+                <div class="text">
+                    <p>Juegos lúdicos: Pulpo va, mancha pelota, etc)</p>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CGl9BczsEBs?start=25&end=35" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="materials">
+                <h3>Materiales necesarios:</h3>
+                <ul>
+                    <li>Material 1</li>
+                    <li>Material 2</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ejercicios" style="display:none;">
+            <h2>Ejercicios</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showIsla('isla1')">Isla de Tackle</a></li>
+                    <li><a href="#" onclick="showIsla('isla2')">Isla de Pase</a></li>
+                    <li><a href="#" onclick="showIsla('isla3')">Isla de reordenamiento</a></li>
+                    <li><a href="#" onclick="showIsla('isla4')">Isla de evasion</a></li>
+                </ul>
+            </nav>
+            <div id="isla1" class="isla">
+                <h3>Tackle</h3>
+                <p>Entrenadores: [Nombres de los entrenadores]</p>
+                <div class="content">
+                    <div class="text">
+                        <p>Volvemos a lo basico<br>Si el grupo viene bien podemos hacerlo mas rapido</p>
+                    </div>
+                    <div class="video">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/INSTAGRAM_POST_ID/" data-instgrm-version="12"></blockquote><script async src="//www.instagram.com/embed.js"></script>
+                    </div>
+                </div>
+                <div class="materials">
+                    <h4>Materiales necesarios:</h4>
+                    <ul>
+                        <li>Material 1</li>
+                        <li>Material 2</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Repetir para las otras islas -->
+        </section>
+
+        <section id="partido" style="display:none;">
+            <h2>Partido</h2>
+            <p>Entrenadores: [Nombres de los entrenadores]</p>
+            <div class="content">
+                <div class="text">
+                    <p>Descripción del partido...</p>
+                </div>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="materials">
+                <h3>Materiales necesarios:</h3>
+                <ul>
+                    <li>Material 1</li>
+                    <li>Material 2</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+        }
+
+        function showIsla(islaId) {
+            const islas = document.querySelectorAll('.isla');
+            islas.forEach(isla => {
+                isla.style.display = isla.id === islaId ? 'block' : 'none';
+            });
+        }
+
+        // Mostrar la primera sección al cargar la página
+        showSection('calentamiento');
+    </script>
+</body>
+</html>
